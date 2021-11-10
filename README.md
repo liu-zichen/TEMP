@@ -1,5 +1,5 @@
 # TEMP
-Code for EMNLP'21 Paper "TEMP: Taxonomy Expansion with Dynamic Margin Loss through Taxonomy-Paths"
+Code for EMNLP'21 Paper "[TEMP: Taxonomy Expansion with Dynamic Margin Loss through Taxonomy-Paths](https://aclanthology.org/2021.emnlp-main.313/)"
 
 Our configs are in `configs.py`.
 The program entry is `run.py`.
