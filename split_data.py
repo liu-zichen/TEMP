@@ -68,7 +68,7 @@ def spilt_data(args):
     tax_pairs = [(p[1], p[0]) for p in tax_pairs]
     tax = TaxStruct(tax_pairs)
     leaf_nodes = tax.all_leaf_nodes()
-    random.seed(0)
+    # random.seed(0)
     eval_terms = random.sample(leaf_nodes, int(len(tax.nodes) * 0.2))
     eval_lines = [list(tax.predecessors(term))[0] + "\n" for term in eval_terms]
     train_lines = ["\t".join(pair) + "\n" for pair in tax_pairs if pair[1] not in eval_terms]

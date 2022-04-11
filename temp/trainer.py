@@ -77,7 +77,7 @@ class Trainer(BaseTrainer):
                 self._log_tensorboard(self.args.log_label, "", loss.item(), loss_count)
                 loss_count += 1
             loss_max = max(loss_max, loss_all)
-            if epoch > 4 and loss_all > loss_max * 0.5:
+            if epoch > 4 and loss_all > loss_max * 0.3:
                 return False  # not converge
         return True
 

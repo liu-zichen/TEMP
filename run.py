@@ -17,7 +17,10 @@ def run(split_args, train_args, eval_args):
     split_data.spilt_data(split_args)
     # training
     trainer = temp.trainer.Trainer(train_args)
-    trainer.train()
+
+    if not trainer.train():
+        print("Model didn't converge! Please try another seed.")
+        return None
     trainer.save_model()
     # eval
     e = temp.Eval(eval_args)
@@ -30,8 +33,6 @@ def run(split_args, train_args, eval_args):
 
 
 if __name__ == '__main__':
-    configs.seed = 0
-    configs.model_type = "bert"
     dataset = "science"
     print(run(split_args=configs.split_configs[dataset],
               train_args=configs.train_configs[dataset],

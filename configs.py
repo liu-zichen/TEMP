@@ -1,5 +1,7 @@
+import time
+
 # dataset = "science"
-seed = 0
+seed = int(time.time()) % 1000
 model_type2path = {
     "electra": "google/electra-base-discriminator",
     "bert": "bert-base-uncased",
@@ -42,7 +44,6 @@ train_configs = {
         save_path="./data/models/trained_science_" + model_type + "/",
         log_path="./data/log/",
         # config
-        seed=0,
         margin_beta=0.2,
         epochs=110,
         batch_size=32,
@@ -60,7 +61,6 @@ train_configs = {
         save_path="./data/models/trained_food_" + model_type + "/",
         log_path="./data/log/",
         # config
-        seed=seed,
         margin_beta=0.2,
         epochs=300,
         batch_size=32,
@@ -78,7 +78,6 @@ train_configs = {
         save_path="./data/models/trained_environment_" + model_type + "/",
         log_path="./data/log/",
         # config
-        seed=seed,
         margin_beta=0.2,
         epochs=110,
         batch_size=32,
